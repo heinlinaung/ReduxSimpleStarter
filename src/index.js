@@ -13,19 +13,19 @@ class App extends Component  {
 		this.state = { videos : [] };
 
 		YTSearch({ key : API_KEY, term :'miracle- dota2' },(videos)=>{
-			this.setState({ videos })
-		})
+			this.setState({ videos });
+		});
 	}
 
-  render() {
-    return (
+	render() {
+		return (
    		<div>
     		<SearchBar />
     		<VideoList videos={this.state.videos} />
   		</div>
   	);
 
-  }
+	}
 }
 
 ReactDOM.render(<App />, document.querySelector('.container'));
